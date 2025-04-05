@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Article</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Add New Article</h1>
+
+    <!-- Error message display if any -->
+    <% if (errorMessage) { %>
+        <div class="error-message"><%= errorMessage %></div>
+    <% } %>
+
+    <!-- Form to add a new article -->
+    <form action="/articles/add" method="POST" enctype="multipart/form-data">
+        <label for="title">Article Title</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Content</label>
+        <textarea id="content" name="content" rows="5" required></textarea>
+
+        <label for="category">Category</label>
+        <select name="category" id="category" required>
+            <option value="">Select a Category</option>
+            <% categories.forEach(function(category) { %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+            <% }); %>
+        </select>
+
+        <label for="published">Publish Article</label>
+        <input type="checkbox" id="published" name="published" value="true">
+
+        <label for="featureImage">Feature Image</label>
+        <input type="file" id="featureImage" name="featureImage" accept="image/*">
+
+        <button type="submit">Add Article</button>
+    </form>
+
+    <a href="/articles">Back to Articles</a>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title><%= article.title %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- Display the custom message -->
+  <% if (message) { %>
+    <p><strong><%= message %></strong></p>
+  <% } %>
+  <h1><%= article.title %></h1>
+  <p><%= article.content %></p>
+  <p><strong>Category:</strong> <%= article.categoryName %></p>
+  <p><strong>Published Date:</strong> <%= article.publishedDate %></p>
+  <p><strong>Published:</strong> <%= article.published ? 'Yes' : 'No' %></p>
+  <% if (article.featureImage) { %>
+    <img src="<%= article.featureImage %>" alt="Feature Image">
+  <% } %>
+  <a href="/articles">Back to Articles</a>
+</body>
+</html>

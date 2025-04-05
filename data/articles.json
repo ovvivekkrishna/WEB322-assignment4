@@ -1,0 +1,17 @@
+[
+    {
+      "id": 1,
+      "title": "Introduction to Node.js",
+      "content": "This article introduces Node.js and its core features...",
+      "category": "Programming",
+      "published": true
+    },
+    {
+      "id": 2,
+      "title": "How to use Express.js",
+      "content": "Express.js is a minimal framework for building web apps...",
+      "category": "Web Development",
+      "published": false
+    }
+  ]
+  

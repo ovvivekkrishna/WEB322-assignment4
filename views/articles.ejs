@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Articles</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/articles">Articles</a></li>
+      <li><a href="/categories">Categories</a></li>
+      <li><a href="/articles/add">Add Article</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <% if (errorMessage) { %>
+      <div class="alert alert-danger"><%= errorMessage %></div>
+    <% } %>
+    <% if (articles && articles.length > 0) { %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Published Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% articles.forEach(article => { %>
+            <tr>
+              <td><a href="/article/<%= article.id %>"><%= article.title %></a></td>
+              <td>
+                <a href="/articles?category=<%= article.categoryId %>">
+                  <%= article.categoryName %>
+                </a>
+              </td>
+              <td><%= article.publishedDate %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } else { %>
+      <p>No articles found.</p>
+    <% } %>
+  </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Articles</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>All Articles</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/articles/add">Add New Article</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
+    <% if (errorMessage) { %>
+        <div class="alert alert-danger"><%= errorMessage %></div>
+    <% } %>
+
+    <div class="container">
+        <% if (articles && articles.length > 0)

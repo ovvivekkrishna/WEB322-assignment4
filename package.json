@@ -1,0 +1,25 @@
+{
+  "name": "webassignment",
+  "version": "1.0.0",
+  "description": "A project for Web322 assignments",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vivek Krishna",
+  "license": "ISC",
+  "dependencies": {
+    "cloudinary": "^2.6.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongoose": "^8.13.1",
+    "multer": "^1.4.5-lts.2",
+    "semver": "^7.7.1",
+    "simple-update-notifier": "^2.0.0",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
