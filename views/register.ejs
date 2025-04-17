@@ -1,0 +1,10 @@
+<h1>Register</h1>
+<p><%= message %></p>
+<form method="POST" action="/register">
+  <input name="userName" placeholder="Username" required />
+  <input name="email" type="email" placeholder="Email" required />
+  <input name="password" type="password" placeholder="Password" required />
+  <input name="password2" type="password" placeholder="Confirm Password" required />
+  <button type="submit">Register</button>
+</form>
+<a href="/login">Login</a>
